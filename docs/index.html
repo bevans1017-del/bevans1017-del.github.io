@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IronFuel - Fitness &amp; Nutrition</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0F0F0F;
+      --surface: #1A1A1A;
+      --border: #2A2A2A;
+      --green: #39FF14;
+      --green-dim: #2bcc0f;
+      --text: #F0F0F0;
+      --muted: #888;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: var(--green); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+    .logo span { color: var(--green); }
+
+    /* HERO */
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 24px 60px;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(57, 255, 20, 0.1);
+      border: 1px solid rgba(57, 255, 20, 0.3);
+      color: var(--green);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 28px;
+    }
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+      max-width: 680px;
+    }
+    h1 em {
+      font-style: normal;
+      color: var(--green);
+    }
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 480px;
+      line-height: 1.6;
+      margin-bottom: 48px;
+    }
+    .cta-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn-primary {
+      background: var(--green);
+      color: #000;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 14px 32px;
+      border-radius: 8px;
+      letter-spacing: 0.3px;
+      transition: opacity 0.15s;
+    }
+    .btn-primary:hover { opacity: 0.85; text-decoration: none; }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 14px 32px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      transition: border-color 0.15s;
+    }
+    .btn-ghost:hover { border-color: var(--muted); text-decoration: none; }
+
+    /* FEATURES */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .feature {
+      background: var(--bg);
+      padding: 36px 28px;
+      text-align: center;
+    }
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+    .feature h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: 0.2px;
+    }
+    .feature p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 28px 40px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer p {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .footer-links a:hover { color: var(--text); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Iron<span>Fuel</span></div>
+  </nav>
+
+  <main class="hero">
+    <div class="badge">Fitness &amp; Nutrition</div>
+    <h1>Train hard.<br><em>Eat smarter.</em></h1>
+    <p class="subtitle">
+      The complete fitness and nutrition app for serious lifters.
+      AI-generated meal plans, macro tracking, and workout programming — all in one place.
+    </p>
+    <div class="cta-group">
+      <a class="btn-primary" href="#">Download on the App Store</a>
+      <a class="btn-ghost" href="mailto:brandon@thefoat.com">Contact Support</a>
+    </div>
+  </main>
+
+  <section class="features">
+    <div class="feature">
+      <div class="feature-icon">🥩</div>
+      <h3>AI Meal Plans</h3>
+      <p>7-day meal plans built to your exact macros and dietary preferences</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📊</div>
+      <h3>Macro Tracking</h3>
+      <p>Track protein, carbs, fat and calories with smart progress rings</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🏋️</div>
+      <h3>Workout Plans</h3>
+      <p>Goal-specific training programs with progressive overload built in</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">⚡</div>
+      <h3>TDEE Calculator</h3>
+      <p>Automatically calculated calorie targets based on your stats and goal</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Brandon Evans. All rights reserved.</p>
+    <nav class="footer-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="mailto:brandon@thefoat.com">Contact</a>
+    </nav>
+  </footer>
+
+</body>
+</html>

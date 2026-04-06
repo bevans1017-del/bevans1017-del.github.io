@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — IronFuel</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0F0F0F;
+      --surface: #1A1A1A;
+      --border: #2A2A2A;
+      --green: #39FF14;
+      --text: #F0F0F0;
+      --muted: #888;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.7;
+    }
+
+    a { color: var(--green); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+    .logo span { color: var(--green); }
+    .nav-back {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .nav-back:hover { color: var(--text); text-decoration: none; }
+
+    /* CONTENT */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+      flex: 1;
+    }
+
+    .page-header {
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-label {
+      display: inline-block;
+      background: rgba(57, 255, 20, 0.08);
+      border: 1px solid rgba(57, 255, 20, 0.25);
+      color: var(--green);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .page-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900;
+      letter-spacing: -0.8px;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .page-header p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* SECTIONS */
+    section {
+      margin-bottom: 44px;
+    }
+    h2 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      color: var(--text);
+      margin-bottom: 12px;
+      padding-left: 12px;
+      border-left: 3px solid var(--green);
+    }
+    p {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 12px;
+    }
+    ul, ol {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+    li {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 6px;
+    }
+
+    /* CALLOUT BOXES */
+    .callout {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--green);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+    }
+    .callout p {
+      margin-bottom: 0;
+      font-size: 0.875rem;
+    }
+    .callout.warning {
+      border-left-color: #FFA500;
+    }
+    .callout.warning p {
+      color: #FFA500;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 28px 40px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .footer-links a:hover { color: var(--text); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      .container { padding: 40px 20px 60px; }
+      footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="logo" href="/">Iron<span>Fuel</span></a>
+    <a class="nav-back" href="/">← Back to Home</a>
+  </nav>
+
+  <main class="container">
+
+    <div class="page-header">
+      <div class="page-label">Legal</div>
+      <h1>Terms of Service</h1>
+      <p>Last updated: April 6, 2026 &nbsp;·&nbsp; Effective: April 6, 2026</p>
+    </div>
+
+    <!-- 1. ACCEPTANCE -->
+    <section id="acceptance">
+      <h2>1. Acceptance of Terms</h2>
+      <p>
+        By downloading, installing, or using IronFuel - Fitness &amp; Nutrition
+        ("App", "Service"), you agree to be bound by these Terms of Service
+        ("Terms"). If you do not agree to these Terms, do not use the App.
+      </p>
+      <p>
+        These Terms constitute a legally binding agreement between you and
+        Brandon Evans ("Developer", "we", "us", or "our"), the developer of
+        IronFuel (Bundle ID: <code>com.bevans1017.ironfuel</code>).
+      </p>
+      <p>
+        By using the App you confirm that you have read, understood, and agree
+        to these Terms and our
+        <a href="https://bevans1017-del.github.io/privacy">Privacy Policy</a>.
+      </p>
+    </section>
+
+    <!-- 2. DESCRIPTION -->
+    <section id="service">
+      <h2>2. Description of Service</h2>
+      <p>
+        IronFuel is a fitness and nutrition tracking application designed for
+        bodybuilders, weightlifters, and individuals pursuing fat loss or
+        physique-focused goals. The Service includes:
+      </p>
+      <ul>
+        <li>AI-generated personalized meal plans and macro targets</li>
+        <li>Daily food logging and macro tracking (protein, carbs, fat, calories)</li>
+        <li>AI-generated workout programming tailored to your goal</li>
+        <li>Body measurement and progress tracking</li>
+        <li>Recipe database and shopping list generation</li>
+        <li>TDEE (Total Daily Energy Expenditure) calculation</li>
+      </ul>
+      <p>
+        We reserve the right to modify, suspend, or discontinue any part of
+        the Service at any time, with or without notice.
+      </p>
+    </section>
+
+    <!-- 3. USER ACCOUNTS -->
+    <section id="accounts">
+      <h2>3. User Accounts</h2>
+      <p>IronFuel offers two account modes:</p>
+      <ul>
+        <li>
+          <strong>Guest (Anonymous):</strong> Use the App without creating an
+          account. Data is stored locally on your device. If you uninstall the
+          App, your data may be lost.
+        </li>
+        <li>
+          <strong>Sign in with Apple:</strong> Authenticate using your Apple ID.
+          This links your data to a cloud-backed account, enabling sync and
+          restore. We receive only the information Apple provides (a unique
+          user identifier and, optionally, your name and email).
+        </li>
+      </ul>
+      <p>
+        You are responsible for maintaining the confidentiality of your account
+        and for all activities that occur under your account. Notify us
+        immediately at <a href="mailto:brandon@thefoat.com">brandon@thefoat.com</a>
+        if you suspect unauthorized access.
+      </p>
+      <p>
+        You may not create accounts on behalf of another person or use
+        another person's account without permission.
+      </p>
+    </section>
+
+    <!-- 4. SUBSCRIPTIONS -->
+    <section id="subscriptions">
+      <h2>4. Subscription Terms</h2>
+
+      <p><strong>Plans available:</strong></p>
+      <ul>
+        <li><strong>Free Tier:</strong> Access to core features at no cost.</li>
+        <li>
+          <strong>IronFuel Pro — Monthly:</strong> $9.99 / month, unlocks all
+          premium features.
+        </li>
+        <li>
+          <strong>IronFuel Pro — Annual:</strong> $59.99 / year (~$5.00/month),
+          unlocks all premium features.
+        </li>
+      </ul>
+
+      <p><strong>Billing and Auto-Renewal:</strong></p>
+      <p>
+        Subscriptions are processed through the Apple App Store and managed by
+        Apple. Payment is charged to your Apple ID at the time of purchase.
+        Subscriptions automatically renew at the end of each billing period
+        unless cancelled at least 24 hours before the renewal date.
+      </p>
+
+      <p><strong>Cancellation:</strong></p>
+      <p>
+        You may cancel your subscription at any time through your Apple ID
+        account settings (Settings → [your name] → Subscriptions). Cancellation
+        takes effect at the end of the current billing period — you retain
+        access to Pro features until that date. We do not offer refunds for
+        partial billing periods, consistent with Apple's standard policies.
+      </p>
+
+      <p><strong>Free Trial (if offered):</strong></p>
+      <p>
+        If a free trial is available, it will be disclosed at the point of
+        subscription. Your subscription begins at the end of the trial period
+        unless cancelled beforehand.
+      </p>
+
+      <p><strong>Price Changes:</strong></p>
+      <p>
+        We reserve the right to change subscription pricing. We will notify
+        you in advance of any price changes. Continued use after a price change
+        takes effect constitutes acceptance of the new price.
+      </p>
+
+      <div class="callout">
+        <p>
+          All subscription purchases, renewals, and refund requests are subject
+          to
+          <a href="https://www.apple.com/legal/internet-services/itunes/us/terms.html" target="_blank" rel="noopener">
+            Apple's Terms and Conditions</a>. We do not process payments
+          directly and cannot issue refunds outside of Apple's policies.
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. ACCEPTABLE USE -->
+    <section id="acceptable-use">
+      <h2>5. Acceptable Use Policy</h2>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Use the App for any unlawful purpose or in violation of any laws</li>
+        <li>Attempt to reverse engineer, decompile, or disassemble the App</li>
+        <li>Use automated tools to scrape, crawl, or extract data from the App</li>
+        <li>Interfere with or disrupt the App's servers or infrastructure</li>
+        <li>Attempt to gain unauthorized access to any accounts or systems</li>
+        <li>Submit false, misleading, or inaccurate information to the App</li>
+        <li>
+          Use the App to distribute spam, malware, or other harmful content
+        </li>
+        <li>
+          Impersonate any person or entity or misrepresent your affiliation
+          with any person or entity
+        </li>
+        <li>
+          Reproduce, duplicate, copy, sell, or resell any portion of the
+          Service without our express written permission
+        </li>
+      </ul>
+      <p>
+        We reserve the right to suspend or terminate your access if you
+        violate this policy.
+      </p>
+    </section>
+
+    <!-- 6. USER DATA -->
+    <section id="data">
+      <h2>6. User Data</h2>
+      <p>
+        When you use IronFuel, we collect and store the following data to
+        provide the Service:
+      </p>
+      <ul>
+        <li>
+          <strong>Profile data:</strong> Name, age, gender, height, weight,
+          body fat percentage, fitness goal, activity level, dietary
+          restrictions, and training experience (collected during onboarding)
+        </li>
+        <li>
+          <strong>Food and nutrition logs:</strong> Meals logged, food items,
+          serving sizes, and macro/calorie data
+        </li>
+        <li>
+          <strong>Workout data:</strong> Workout plans, exercise logs, sets,
+          reps, and weights
+        </li>
+        <li>
+          <strong>Progress data:</strong> Body measurements and progress
+          records over time
+        </li>
+      </ul>
+      <p>
+        Data for authenticated users is stored securely in Supabase, our
+        cloud database provider. Guest user data is stored locally on your
+        device using AsyncStorage.
+      </p>
+      <p>
+        We do not sell your personal data to third parties. Please review our
+        <a href="https://bevans1017-del.github.io/privacy">Privacy Policy</a>
+        for full details on how we collect, use, and protect your data.
+      </p>
+      <p>
+        You may request deletion of your account and associated data at any
+        time by contacting us at
+        <a href="mailto:brandon@thefoat.com">brandon@thefoat.com</a>.
+      </p>
+    </section>
+
+    <!-- 7. AI FEATURES -->
+    <section id="ai">
+      <h2>7. AI-Generated Content</h2>
+      <p>
+        IronFuel uses Claude AI (developed by Anthropic) to generate
+        personalized meal plans, recipe suggestions, and workout programs.
+      </p>
+
+      <div class="callout warning">
+        <p>
+          <strong>Important Disclaimer:</strong> AI-generated meal plans,
+          nutritional recommendations, and workout programs are provided for
+          informational and motivational purposes only. They do not constitute
+          medical advice, dietary advice, or professional fitness instruction.
+          Always consult a qualified healthcare provider, registered dietitian,
+          or certified fitness professional before starting any new diet or
+          exercise program.
+        </p>
+      </div>
+
+      <p>
+        AI output may occasionally contain errors, inaccuracies, or suggestions
+        that are not appropriate for your individual health circumstances. You
+        use AI-generated content at your own risk. We make no warranties
+        regarding the accuracy, completeness, or fitness for purpose of any
+        AI-generated content.
+      </p>
+      <p>
+        AI-generated content is produced dynamically and may vary between
+        sessions. We do not guarantee that the same inputs will always produce
+        identical outputs.
+      </p>
+    </section>
+
+    <!-- 8. THIRD PARTY SERVICES -->
+    <section id="third-party">
+      <h2>8. Third-Party Services</h2>
+      <p>
+        IronFuel integrates with several third-party services to deliver its
+        features. Your use of the App is also subject to their respective terms
+        and policies:
+      </p>
+      <ul>
+        <li>
+          <strong>Apple App Store / Apple ID</strong> — App distribution,
+          in-app purchases, Sign in with Apple.
+          (<a href="https://www.apple.com/legal/internet-services/itunes/us/terms.html" target="_blank" rel="noopener">Apple Terms</a>)
+        </li>
+        <li>
+          <strong>Supabase</strong> — Cloud database and authentication
+          backend for user data storage.
+          (<a href="https://supabase.com/terms" target="_blank" rel="noopener">Supabase Terms</a>)
+        </li>
+        <li>
+          <strong>RevenueCat</strong> — Subscription management and
+          in-app purchase processing.
+          (<a href="https://www.revenuecat.com/terms" target="_blank" rel="noopener">RevenueCat Terms</a>)
+        </li>
+        <li>
+          <strong>Anthropic (Claude AI)</strong> — AI model powering meal
+          plan and workout generation.
+          (<a href="https://www.anthropic.com/legal/consumer-terms" target="_blank" rel="noopener">Anthropic Terms</a>)
+        </li>
+      </ul>
+      <p>
+        We are not responsible for the content, privacy practices, or conduct
+        of these third-party services. We encourage you to review their
+        respective terms and privacy policies.
+      </p>
+    </section>
+
+    <!-- 9. AGE RESTRICTION -->
+    <section id="age">
+      <h2>9. Age Restriction (COPPA Compliance)</h2>
+      <p>
+        IronFuel is intended for users who are <strong>13 years of age or
+        older</strong>. By using the App, you confirm that you are at least
+        13 years old.
+      </p>
+      <p>
+        We do not knowingly collect personal information from children under
+        the age of 13. If we become aware that a child under 13 has provided
+        us with personal information, we will take steps to delete such
+        information and terminate that user's account.
+      </p>
+      <p>
+        If you are a parent or guardian and believe your child under 13 has
+        used the App or provided us with personal information, please contact
+        us immediately at
+        <a href="mailto:brandon@thefoat.com">brandon@thefoat.com</a>.
+      </p>
+      <p>
+        Users between the ages of 13 and 17 should review these Terms with
+        a parent or guardian before using the App.
+      </p>
+    </section>
+
+    <!-- 10. MEDICAL DISCLAIMER -->
+    <section id="disclaimer">
+      <h2>10. Medical Disclaimer</h2>
+
+      <div class="callout warning">
+        <p>
+          <strong>IronFuel is not a medical application.</strong> The App and
+          all content within it — including AI-generated meal plans, macro
+          targets, calorie recommendations, and workout programs — are for
+          general fitness and informational purposes only and do not constitute
+          medical advice.
+        </p>
+      </div>
+
+      <p>
+        Before starting any new diet, nutrition plan, or exercise program,
+        you should consult with a qualified physician, registered dietitian,
+        or other licensed healthcare professional, especially if you have
+        any pre-existing medical conditions, injuries, or health concerns.
+      </p>
+      <p>
+        The calorie and macro calculations provided by the App are estimates
+        based on standard formulas (such as the Mifflin-St Jeor equation) and
+        may not accurately reflect your individual metabolic needs.
+        Individual results will vary.
+      </p>
+      <p>
+        Do not disregard professional medical advice or delay seeking
+        treatment because of information you have received from this App.
+      </p>
+    </section>
+
+    <!-- 11. LIMITATION OF LIABILITY -->
+    <section id="liability">
+      <h2>11. Limitation of Liability</h2>
+      <p>
+        To the fullest extent permitted by applicable law, Brandon Evans and
+        IronFuel shall not be liable for any indirect, incidental, special,
+        consequential, or punitive damages arising out of or related to your
+        use of — or inability to use — the App or its content, even if advised
+        of the possibility of such damages.
+      </p>
+      <p>
+        This includes, without limitation, damages for:
+      </p>
+      <ul>
+        <li>Personal injury resulting from following meal plans or workout programs</li>
+        <li>Loss of data or account information</li>
+        <li>Inaccuracies in AI-generated content</li>
+        <li>Service interruptions or downtime</li>
+        <li>Unauthorized access to your account</li>
+      </ul>
+      <p>
+        Our total liability to you for any claims arising out of or related
+        to these Terms or the Service shall not exceed the amount you paid us
+        in the 12 months preceding the claim (or $10 USD if you have not made
+        any payments).
+      </p>
+      <p>
+        Some jurisdictions do not allow the exclusion of certain warranties or
+        limitation of liability for certain damages. In such jurisdictions,
+        our liability is limited to the greatest extent permitted by law.
+      </p>
+    </section>
+
+    <!-- 12. CHANGES TO TERMS -->
+    <section id="changes">
+      <h2>12. Changes to These Terms</h2>
+      <p>
+        We may update these Terms from time to time. When we make material
+        changes, we will update the "Last updated" date at the top of this
+        page and, where feasible, notify you via the App or email.
+      </p>
+      <p>
+        Your continued use of the App after changes become effective
+        constitutes your acceptance of the revised Terms. If you do not agree
+        to the updated Terms, you must stop using the App.
+      </p>
+      <p>
+        We encourage you to review these Terms periodically. The current
+        version is always available at
+        <a href="https://bevans1017-del.github.io/terms">bevans1017-del.github.io/terms</a>.
+      </p>
+    </section>
+
+    <!-- 13. GOVERNING LAW -->
+    <section id="governing-law">
+      <h2>13. Governing Law</h2>
+      <p>
+        These Terms shall be governed by and construed in accordance with the
+        laws of the State of Texas, United States, without regard to its
+        conflict of law provisions. Any disputes arising under these Terms
+        shall be subject to the exclusive jurisdiction of the courts located
+        in Texas.
+      </p>
+    </section>
+
+    <!-- 14. CONTACT -->
+    <section id="contact">
+      <h2>14. Contact Information</h2>
+      <p>
+        If you have any questions about these Terms, please contact us:
+      </p>
+      <ul>
+        <li><strong>Developer:</strong> Brandon Evans</li>
+        <li>
+          <strong>Email:</strong>
+          <a href="mailto:brandon@thefoat.com">brandon@thefoat.com</a>
+        </li>
+        <li>
+          <strong>Website:</strong>
+          <a href="https://bevans1017-del.github.io">bevans1017-del.github.io</a>
+        </li>
+        <li><strong>App:</strong> IronFuel - Fitness &amp; Nutrition</li>
+        <li><strong>Bundle ID:</strong> com.bevans1017.ironfuel</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Brandon Evans. All rights reserved.</p>
+    <nav class="footer-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="mailto:brandon@thefoat.com">Contact</a>
+    </nav>
+  </footer>
+
+</body>
+</html>
