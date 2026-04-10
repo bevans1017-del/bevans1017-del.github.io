@@ -170,6 +170,24 @@
     }
     .footer-links a:hover { color: var(--text); text-decoration: none; }
 
+    .fatsecret-attribution {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      margin-top: 4px;
+    }
+    .fatsecret-attribution span {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .fatsecret-attribution img {
+      height: 22px;
+      width: auto;
+    }
+
     @media (max-width: 600px) {
       nav { padding: 16px 20px; }
       footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
@@ -191,7 +209,7 @@
     </p>
     <div class="cta-group">
       <a class="btn-primary" href="#">Download on the App Store</a>
-      <a class="btn-ghost" href="mailto:brandon@thefoat.com">Contact Support</a>
+      <a class="btn-ghost" href="mailto:bevans1017@gmail.com">Contact Support</a>
     </div>
   </main>
 
@@ -223,8 +241,17 @@
     <nav class="footer-links">
       <a href="/privacy">Privacy Policy</a>
       <a href="/terms">Terms of Service</a>
-      <a href="mailto:brandon@thefoat.com">Contact</a>
+      <a href="mailto:bevans1017@gmail.com">Contact</a>
     </nav>
+    <div class="fatsecret-attribution">
+      <span>Nutrition data powered by FatSecret</span>
+      <a href="https://platform.fatsecret.com" target="_blank" rel="noopener noreferrer">
+        <img
+          src="https://platform.fatsecret.com/api/static/images/powered_by_fatsecret_horizontal_white.png"
+          alt="Powered by FatSecret"
+        />
+      </a>
+    </div>
   </footer>
 
 </body>
