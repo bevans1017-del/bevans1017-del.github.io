@@ -1,11 +1,451 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>IronFuel - Fitness & Nutrition</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IronFuel - Fitness &amp; Nutrition</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0F0F0F;
+      --surface: #1A1A1A;
+      --border: #2A2A2A;
+      --green: #39FF14;
+      --green-dim: #2bcc0f;
+      --text: #F0F0F0;
+      --muted: #888;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: var(--green); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+    .logo span { color: var(--green); }
+
+    /* HERO */
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 24px 60px;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(57, 255, 20, 0.1);
+      border: 1px solid rgba(57, 255, 20, 0.3);
+      color: var(--green);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 28px;
+    }
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+      max-width: 680px;
+    }
+    h1 em {
+      font-style: normal;
+      color: var(--green);
+    }
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 480px;
+      line-height: 1.6;
+      margin-bottom: 48px;
+    }
+    .cta-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* App Store Badge */
+    .appstore-badge {
+      display: inline-block;
+      transition: opacity 0.15s;
+    }
+    .appstore-badge:hover { opacity: 0.85; text-decoration: none; }
+    .appstore-badge img {
+      height: 52px;
+      width: auto;
+      display: block;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 14px 32px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      transition: border-color 0.15s;
+    }
+    .btn-ghost:hover { border-color: var(--muted); text-decoration: none; }
+
+    /* SCREENSHOTS */
+    .screenshots {
+      padding: 72px 24px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+    .screenshots h2 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+    .screenshots h2 em {
+      font-style: normal;
+      color: var(--green);
+    }
+    .screenshots-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 48px;
+    }
+    .screenshot-row {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .phone-frame {
+      width: 200px;
+      flex-shrink: 0;
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: 36px;
+      padding: 16px 12px;
+      position: relative;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+    }
+    .phone-notch {
+      width: 60px;
+      height: 8px;
+      background: var(--border);
+      border-radius: 4px;
+      margin: 0 auto 14px;
+    }
+    .phone-screen {
+      background: #111;
+      border-radius: 22px;
+      height: 360px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px;
+      border: 1px solid #222;
+      overflow: hidden;
+    }
+    .screen-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--green);
+      opacity: 0.7;
+    }
+    .screen-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text);
+      text-align: center;
+    }
+    .screen-mockup {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .mock-bar {
+      height: 8px;
+      border-radius: 4px;
+      background: var(--border);
+    }
+    .mock-bar.green { background: var(--green); opacity: 0.7; }
+    .mock-bar.short { width: 55%; }
+    .mock-bar.medium { width: 75%; }
+    .mock-bar.full { width: 100%; }
+    .mock-card {
+      background: #1c1c1c;
+      border-radius: 10px;
+      padding: 10px;
+      border: 1px solid #2a2a2a;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .mock-ring-row {
+      display: flex;
+      justify-content: space-around;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .mock-ring {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 3px solid var(--border);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mock-ring.green-ring { border-color: var(--green); opacity: 0.8; }
+    .mock-ring.blue-ring { border-color: #4fc3f7; opacity: 0.8; }
+    .mock-ring.orange-ring { border-color: #ffb74d; opacity: 0.8; }
+    .mock-ring span {
+      font-size: 0.45rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    /* FEATURES */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .feature {
+      background: var(--bg);
+      padding: 36px 28px;
+      text-align: center;
+    }
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+    .feature h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: 0.2px;
+    }
+    .feature p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 28px 40px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer p {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .footer-links a:hover { color: var(--text); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+      .hero { padding: 60px 20px 48px; }
+      .screenshots { padding: 52px 20px; }
+      .phone-frame { width: 160px; }
+      .phone-screen { height: 290px; }
+      .screenshot-row { gap: 16px; }
+    }
+  </style>
 </head>
 <body>
-  <h1>IronFuel</h1>
-  <p>The complete fitness and nutrition app for serious lifters.</p>
-  <p>For support, contact: <a href="mailto:bevans1017@gmail.com">bevans1017@gmail.com</a></p>
+
+  <nav>
+    <div class="logo">Iron<span>Fuel</span></div>
+  </nav>
+
+  <main class="hero">
+    <div class="badge">Fitness &amp; Nutrition</div>
+    <h1>Train hard.<br><em>Eat smarter.</em></h1>
+    <p class="subtitle">
+      The complete fitness and nutrition app for serious lifters.
+      AI-generated meal plans, macro tracking, and workout programming — all in one place.
+    </p>
+    <div class="cta-group">
+      <a class="appstore-badge" href="https://apps.apple.com/app/id6760845808" target="_blank" rel="noopener">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" />
+      </a>
+      <a class="btn-ghost" href="mailto:bevans1017@gmail.com">Contact Support</a>
+    </div>
+  </main>
+
+  <section class="features">
+    <div class="feature">
+      <div class="feature-icon">🥩</div>
+      <h3>AI Meal Plans</h3>
+      <p>7-day meal plans built to your exact macros and dietary preferences</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📊</div>
+      <h3>Macro Tracking</h3>
+      <p>Track protein, carbs, fat and calories with smart progress rings</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🏋️</div>
+      <h3>Workout Plans</h3>
+      <p>Goal-specific training programs with progressive overload built in</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">⚡</div>
+      <h3>TDEE Calculator</h3>
+      <p>Automatically calculated calorie targets based on your stats and goal</p>
+    </div>
+  </section>
+
+  <!-- SCREENSHOTS -->
+  <section class="screenshots">
+    <h2>Everything you need,<br><em>in your pocket.</em></h2>
+    <p class="screenshots-subtitle">Built for the gym. Designed for results.</p>
+    <div class="screenshot-row">
+
+      <!-- Screen 1: Macro Tracking -->
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="screen-label">Today</div>
+          <div class="screen-title">Daily Macros</div>
+          <div class="mock-ring-row">
+            <div class="mock-ring green-ring"><span>Cal</span></div>
+            <div class="mock-ring blue-ring"><span>Pro</span></div>
+            <div class="mock-ring orange-ring"><span>Carb</span></div>
+          </div>
+          <div class="screen-mockup" style="margin-top:10px;">
+            <div class="mock-card">
+              <div class="mock-bar full"></div>
+              <div class="mock-bar medium green"></div>
+            </div>
+            <div class="mock-card">
+              <div class="mock-bar full"></div>
+              <div class="mock-bar short green"></div>
+            </div>
+            <div class="mock-card">
+              <div class="mock-bar full"></div>
+              <div class="mock-bar medium"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen 2: Meal Plan -->
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="screen-label">AI Generated</div>
+          <div class="screen-title">Meal Plan</div>
+          <div class="screen-mockup">
+            <div class="mock-card">
+              <div class="mock-bar medium"></div>
+              <div class="mock-bar short green"></div>
+            </div>
+            <div class="mock-card">
+              <div class="mock-bar full"></div>
+              <div class="mock-bar medium green"></div>
+            </div>
+            <div class="mock-card">
+              <div class="mock-bar medium"></div>
+              <div class="mock-bar short green"></div>
+            </div>
+            <div class="mock-card">
+              <div class="mock-bar full"></div>
+              <div class="mock-bar medium"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen 3: Workout -->
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="screen-label">Training</div>
+          <div class="screen-title">Workout Plan</div>
+          <div class="screen-mockup">
+            <div class="mock-card">
+              <div class="mock-bar full green"></div>
+              <div class="mock-bar medium"></div>
+              <div class="mock-bar short"></div>
+            </div>
+            <div class="mock-card">
+              <div class="mock-bar full green"></div>
+              <div class="mock-bar medium"></div>
+              <div class="mock-bar short"></div>
+            </div>
+            <div class="mock-card">
+              <div class="mock-bar medium green"></div>
+              <div class="mock-bar short"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Brandon Evans. All rights reserved.</p>
+    <nav class="footer-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="mailto:bevans1017@gmail.com">Contact</a>
+    </nav>
+  </footer>
+
 </body>
 </html>
